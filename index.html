@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Made With Love ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #fff8f3;
+  color: #3d3030;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #fff1f5, #fff8e9);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0 0 15px;
+}
+
+.hero p {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.enter {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #d96b82;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 18px;
+}
+
+.jar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.jar {
+  background: white;
+  border-radius: 25px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.jar:hover {
+  transform: translateY(-5px);
+}
+
+.jar .emoji {
+  font-size: 48px;
+}
+
+.jar h2 {
+  margin: 15px 0 8px;
+}
+
+.jar p {
+  color: #756565;
+  line-height: 1.5;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.back {
+  margin-bottom: 25px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #8b4b5c;
+}
+
+.note {
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  margin: 25px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.note p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.note img,
+.note video {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-top: 15px;
+}
+
+.note audio {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.memory-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.small-title {
+  margin-top: 45px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  color: #806f6f;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero" id="home">
+  <h1>Made With Love ❤️</h1>
+
+  <p>
+    A little something from your little sister —
+    made from memories, home, and a lot of love.
+  </p>
+
+  <button class="enter" onclick="showPage('jars')">
+    Open it 💌
+  </button>
+</section>
+
+
+<section class="container section" id="jars">
+
+  <h1 style="text-align:center;">For you ❤️</h1>
+
+  <p style="text-align:center; line-height:1.7;">
+    Three little places for three different kinds of memories.
+  </p>
+
+  <div class="jar-grid">
+
+    <div class="jar" onclick="showPage('memories')">
+      <div class="emoji">🩷</div>
+      <h2>Our Memories</h2>
+      <p>A few things I still remember.</p>
+    </div>
+
+    <div class="jar" onclick="showPage('homeSection')">
+      <div class="emoji">🏠</div>
+      <h2>A Little Piece of Home</h2>
+      <p>For the days you miss home.</p>
+    </div>
+
+    <div class="jar" onclick="showPage('birthday')">
+      <div class="emoji">🎂</div>
+      <h2>Made With Love</h2>
+      <p>Because it's your birthday.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container section" id="memories">
+
+  <button class="back" onclick="showPage('jars')">
+    ← Back
+  </button>
+
+  <h1>🩷 Our Memories</h1>
+
+  <div class="note">
+    <p>
+      I miss the times when we were just together, laughing over
+      the most random things and having absolutely nothing to worry about.
+      I really hope no matter how much life changes, we never stop being like that.
+      Even if we're far away, I hope we're always close in our hearts. ❤️
+    </p>
+  </div>
+
+  <div class="memory-grid">
+    
+<img src="images/memories/photo1.jpg" alt="Memory">
+    <img src="images/memories/photo2.jpg" alt="Memory">
+    <img src="images/memories/photo3.jpg" alt="Memory">
+    <img src="images/memories/photo4.jpg" alt="Memory">
+
+  </div>
+
+</section>
+
+
+<section class="container section" id="homeSection">
+
+  <button class="back" onclick="showPage('jars')">
+    ← Back
+  </button>
+
+  <h1>🏠 A Little Piece of Home</h1>
+
+  <div class="note">
+    <p>
+      Sometimes you don't need anything big.
+      You just need a little piece of home.
+      So here's ours. ❤️
+    </p>
+  </div>
+
+
+  <div class="note">
+
+    <h2>🎧 Listen</h2>
+
+    <p>Something from home, just for you.</p>
+
+    <audio controls>
+      <source src="audio/me.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+
+  <div class="note">
+
+    <h2>🎧 A message from Mom</h2>
+
+    <audio controls>
+      <source src="audio/mom.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+
+  <div class="note">
+
+    <h2>🎧 A message from Dad</h2>
+
+    <audio controls>
+      <source src="audio/dad.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+
+  <div class="note">
+
+    <h2>📸 Home</h2>
+
+    <div class="memory-grid">
+
+      <img src="images/home/family1.jpg" alt="Family">
+      <img src="images/home/family2.jpg" alt="Family">
+      <img src="images/home/childhood1.jpg" alt="Childhood">
+      <img src="images/home/yomi.jpg" alt="Yomi">
+
+    </div>
+
+  </div>
+
+
+  <div class="note">
+
+    <h2>🎥 One for the memories</h2>
+
+    <video controls>
+      <source src="videos/home1.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+</section>
+
+
+<section class="container section" id="birthday">
+
+  <button class="back" onclick="showPage('jars')">
+    ← Back
+  </button>
+
+  <h1>🎂 Made With Love</h1>
+
+  <div class="note">
+
+    <p>
+      Happy Birthday ❤️
+    </p>
+
+    <p>
+      This little website is basically a collection of memories,
+      random moments and things I don't always say out loud.
+    </p>
+
+    <p>
+      I hope you have an amazing year ahead and that we get to
+      make a lot more memories together.
+    </p>
+
+    <p>
+      Love you. And yes, you still owe me a proper treat when
+      you come back to India. 😭
+    </p>
+
+  </div>
+
+
+  <div class="memory-grid">
+
+    <img src="images/birthday/birthday1.jpg" alt="Birthday memory">
+    <img src="images/birthday/birthday2.jpg" alt="Birthday memory">
+
+  </div>
+
+</section>
+
+
+<footer>
+  Made with love ❤️
+</footer>
+
+
+<script>
+
+function showPage(pageId) {
+
+  document.querySelectorAll(".section").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  document.getElementById(pageId).classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+</script>
+
+</body>
+</html>
