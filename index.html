@@ -1,347 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<span class="sticker">a little piece of home</span>
 
-<title>Made With Love ❤️</title>
+    <h1>🏠 A Little Piece of Home</h1>
 
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: #fff8f3;
-  color: #3d3030;
-}
-
-.hero {
-  min-height: 100vh;
-  padding: 70px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(135deg, #fff1f5, #fff8e9);
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin: 0 0 15px;
-}
-
-.hero p {
-  max-width: 520px;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-.enter {
-  margin-top: 25px;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 30px;
-  background: #d96b82;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 50px 18px;
-}
-
-.jar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
-
-.jar {
-  background: white;
-  border-radius: 25px;
-  padding: 30px 20px;
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.jar:hover {
-  transform: translateY(-5px);
-}
-
-.jar .emoji {
-  font-size: 48px;
-}
-
-.jar h2 {
-  margin: 15px 0 8px;
-}
-
-.jar p {
-  color: #756565;
-  line-height: 1.5;
-}
-
-.section {
-  display: none;
-}
-
-.section.active {
-  display: block;
-}
-
-.back {
-  margin-bottom: 25px;
-  border: none;
-  background: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: #8b4b5c;
-}
-
-.note {
-  background: white;
-  padding: 25px;
-  border-radius: 22px;
-  margin: 25px 0;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-}
-
-.note p {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.note img,
-.note video {
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-  border-radius: 16px;
-  margin-top: 15px;
-}
-
-.note audio {
-  width: 100%;
-  margin-top: 15px;
-}
-
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.memory-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-.small-title {
-  margin-top: 45px;
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-  padding: 50px 20px;
-  color: #806f6f;
-}
-
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero" id="home">
-  <h1>Made With Love ❤️</h1>
-
-  <p>
-    A little something from your little sister —
-    made from memories, home, and a lot of love.
-  </p>
-
-  <button class="enter" onclick="showPage('jars')">
-    Open it 💌
-  </button>
-</section>
-
-
-<section class="container section" id="jars">
-
-  <h1 style="text-align:center;">For you ❤️</h1>
-
-  <p style="text-align:center; line-height:1.7;">
-    Three little places for three different kinds of memories.
-  </p>
-
-  <div class="jar-grid">
-
-    <div class="jar" onclick="showPage('memories')">
-      <div class="emoji">🩷</div>
-      <h2>Our Memories</h2>
-      <p>A few things I still remember.</p>
-    </div>
-
-    <div class="jar" onclick="showPage('homeSection')">
-      <div class="emoji">🏠</div>
-      <h2>A Little Piece of Home</h2>
-      <p>For the days you miss home.</p>
-    </div>
-
-    <div class="jar" onclick="showPage('birthday')">
-      <div class="emoji">🎂</div>
-      <h2>Made With Love</h2>
-      <p>Because it's your birthday.</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="container section" id="memories">
-  <button class="back" onclick="showPage('jars')">← Back</button>
-
-  <h1>🩷 Our Memories</h1>
-
-  <div class="note">
     <p>
-      Hey BRO✨
-      <br><br>
-      If you're opening this, I’m assuming you miss me (which is reasonable 😁). And honestly… I miss you too🥹
-      <br><br>
-      I miss all those random times when we were together, laughing, annoying each other, doing stupid things and just existing 🧘. I hope we never become those siblings who barely talk or slowly become strangers just because life gets busy🙏. Even when we fight, I hope we always figure it out and come back to each other 🫶🫶
-      <br><br>
-      There’s a huge distance between us rn — you're in the US and I’m here in India — but I really hope that never changes how close we are😶‍🌫️. I hope no matter what happens in our lives, we always find our way back to each other 🤧
-      <br><br>
-      I still remember little things from when I was younger that you probably don't even remember (I hope you do tho) 😅
-      <br><br>
-      Like the first time I ever ate dahi puri. It was with you. I know it sounds so random and small, but somehow I still remember it. I literally had dahi puri the other day and immediately thought of you 😭. And that tiny memory was one of the reasons I thought of making this whole thing
-      <br><br>
-      And you stealing chicken from my plate 😭. I didn't even notice it back then until you told me. I still don't remember half of it 😭 which is really funny
-      <br><br>
-      When I was little, I didn't really understand how much time I was spending with you. Then you went away for hostel, college and everything, and suddenly we weren't around each other as much. Now that I think about it, that's probably why lockdown feels so special to me. We actually got to spend so much time together again.
-      <br><br>
-      We watched so many movies and documentaries together. I still remember the Titanic documentary we watched, and us waiting for new episodes of Loki every Wednesday🔥. We used to go to theatres and honestly, I think a lot of my love for movies came from you(maybe not really sure)🤷
-      <br><br>
-      And somehow you used to make me do your work too🙄. After lockdown, when school started again, you literally wrote my notes because I had watched approximately ZERO lectures during lockdown💀. And then when I was in 8th/9th, you made me write some of you assignments too(2 actually i wanted to exaggerate).
-      <br><br>
-      And then there was the Disney+ Hotstar situation 😭. You gave me a fixed amount of screen time and even locked the cartoon channel. But you made one tiny mistake😁, you used the same password for my phone and the TV thing😝. Obviously I figured it out. I still remember how shocked you were.
-      <br><br>
-      And Cream Stone🤧. You'd always get Willy Wonka, and you'd make me try different flavours while you stayed safely with your comfort order. Looking back, I realise I was being a lab rat for you while you enjoyed the results🙄😑.(I enjoyed the results too tho😄😃)
-      <br><br>
-      Then there was Yomi 🥹. I don't remember every detail anymore, but I remember playing with Yomi and you being there. I remember running around, racing with him and somehow ending up scraping my knee. Some memories are blurry now, but they're still there somewhere.
-      <br><br>
-      And I still remember that random moments when we used to make those stupid trend videos, including that one where you used the reverse effect with the glass of water so it looked like the water jumped back into the glass, And that "aasa dosa apadam vada" trend💀
+      For the days you miss home.
     </p>
+
   </div>
 
-  <div class="memory-grid">
-    <img src="images/memories/photo1.jpg" alt="Memory 1">
-    <img src="images/memories/photo2.jpg" alt="Memory 2">
-    <img src="images/memories/photo3.jpg" alt="Memory 3">
-    <img src="images/memories/photo4.jpg" alt="Memory 4">
-  </div>
-  <div style="text-align:center; margin-top:35px;">
-    <button class="enter" onclick="showPage('memories2')">
-      More Memories → 🩷
-    </button>
-  </div>
-</section>
-
-
-<section class="container section" id="memories2">
-  <button class="back" onclick="showPage('memories')">← Previous Page</button>
-
-  <h1>🩷 More Memories</h1>
 
   <div class="note">
-    <p>
-      There are so many tiny things like that. You introducing me to foods and places, like Mehfill biryani (which is under a controversy), RTC Cross Roads biryani, bbq nation and all that stuff. You teaching me random things. You including me when I was too young to actually know what I was doing. You being around for things that probably felt completely normal to you but somehow became memories for me.
-      <br><br>
-      Now you're literally in another country learning how to cook and figure out life which is great😅😭. And I'm actually proud of you for that. But when you come back to India, I'm expecting you to cook for me some really nice dishes👌👌
-      <br><br>
-      And we're definitely going somewhere too. Wonderla, Ramoji, some random trip, literally anywhere. We'll go out, eat everything, TAKE PICTURE (we basically have none if we ignore the funny ones) and have an absolute blast 🙉🙉.
-      <br><br>
-      I know we don't always talk about everything, and we're not exactly the siblings who sit down and discuss every detail of our lives 😅. But I hope that changes too. I hope as we get older, we don't just become two people who happen to be siblings. I want us to actually know each other.
-      <br><br>
-      And no matter how much life changes, I hope you always know that you have me. Whether we're in the same house, different cities or literally on opposite sides of the world.
-      <br><br>
-      So yeah… that's a lot of words, I was NOT EXPECTING to do this much yup and somehow reached here
-      <br><br>
-      I love you 🫶
-      <br><br>
-      Byeeeee 🫶🫶👋
-    </p>
-  </div>
 
-  <div class="memory-grid">
-    <img src="images/memories/photo5.jpg" alt="Memory 5">
-    <img src="images/memories/photo6.jpg" alt="Memory 6">
-    <img src="images/memories/photo7.jpg" alt="Memory 7">
-    <img src="images/memories/photo8.jpg" alt="Memory 8">
-  </div>
-
-  <div style="text-align:center; margin-top:35px;">
-    <button class="enter" onclick="showPage('memories')">
-      ← Previous Page
-    </button>
-  </div>
-</section>
-  
-
-  <button class="back" onclick="showPage('jars')">← Back</button>
-
-  <h1>🩷 Our Memories</h1>
-
-  <div class="note">
-    <p>
-      Hey BRO✨
-
-      <br><br>
-
-      If you're opening this, I’m assuming you miss me (which is reasonable 😁). And honestly… I miss you too🥹
-
-      <br><br>
-
-      I miss all those random times when we were together, laughing, annoying each other, doing stupid things and just existing 🧘. I hope we never become those siblings who barely talk or slowly become strangers just because life gets busy🙏. Even when we fight, I hope we always figure it out and come back to each other 🫶🫶
-
-      <br><br>
-
-
-  <button class="back" onclick="showPage('jars')">
-    ← Back
-  </button>
-
-  <h1>🏠 A Little Piece of Home</h1>
-
-  <div class="note">
     <p>
       Sometimes you don't need anything big.
-      You just need a little piece of home.
-      So here's ours. ❤️
+      You just need a little piece of home. ❤️
     </p>
+
   </div>
 
 
@@ -349,7 +23,9 @@ footer {
 
     <h2>🎧 Listen</h2>
 
-    <p>Something from home, just for you.</p>
+    <p>
+      Something from home, just for you.
+    </p>
 
     <audio controls>
       <source src="audio/me.mp3" type="audio/mpeg">
@@ -386,10 +62,25 @@ footer {
 
     <div class="memory-grid">
 
-      <img src="images/home/family1.jpg" alt="Family">
-      <img src="images/home/family2.jpg" alt="Family">
-      <img src="images/home/childhood1.jpg" alt="Childhood">
-      <img src="images/home/yomi.jpg" alt="Yomi">
+      <div class="polaroid">
+        <img src="images/home/family1.jpg" alt="Family">
+        <span>home ♡</span>
+      </div>
+
+      <div class="polaroid">
+        <img src="images/home/family2.jpg" alt="Family">
+        <span>family</span>
+      </div>
+
+      <div class="polaroid">
+        <img src="images/home/childhood1.jpg" alt="Childhood">
+        <span>little us</span>
+      </div>
+
+      <div class="polaroid">
+        <img src="images/home/yomi.jpg" alt="Yomi">
+        <span>Yomi 🥹</span>
+      </div>
 
     </div>
 
@@ -406,22 +97,39 @@ footer {
 
   </div>
 
+
 </section>
 
 
-<section class="container section" id="birthday">
+<!-- ================= BIRTHDAY ================= -->
+
+<section class="screen container" id="birthday">
 
   <button class="back" onclick="showPage('jars')">
     ← Back
   </button>
 
-  <h1>🎂 Made With Love</h1>
 
-  <div class="note">
+  <div class="page-title">
+
+    <span class="sticker">made with love</span>
+
+    <h1>🎂 Made With Love</h1>
 
     <p>
-      Happy Birthday ❤️
+      Because it's your birthday.
     </p>
+
+  </div>
+
+
+  <div class="birthday-card">
+
+    <div class="doodle">
+      ♡ ✦ ♡
+    </div>
+
+    <h2>Happy Birthday ❤️</h2>
 
     <p>
       This little website is basically a collection of memories,
@@ -438,54 +146,59 @@ footer {
       you come back to India. 😭
     </p>
 
+    <div class="doodle">
+      ✧ ♡ ✧
+    </div>
+
   </div>
 
 
   <div class="memory-grid">
 
-    <img src="images/birthday/birthday1.jpg" alt="Birthday memory">
-    <img src="images/birthday/birthday2.jpg" alt="Birthday memory">
+    <div class="polaroid">
+      <img src="images/birthday/birthday1.jpg" alt="Birthday memory">
+      <span>birthday archive ♡</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/birthday/birthday2.jpg" alt="Birthday memory">
+      <span>one for the album</span>
+    </div>
 
   </div>
+
 
 </section>
 
 
 <footer>
-  Made with love ❤️
+  Made with love ♡
 </footer>
 
-  <script>
+
+<script>
 
 function showPage(pageId) {
 
-  // Hide the opening screen
-  document.getElementById("home").style.display = "none";
-
-  // Hide every section
-  document.querySelectorAll(".section").forEach(section => {
-    section.classList.remove("active");
+  document.querySelectorAll(".screen").forEach(function(screen) {
+    screen.classList.remove("active");
   });
 
-  // Show the selected page
   const page = document.getElementById(pageId);
 
   if (page) {
     page.classList.add("active");
   }
 
-  // Go back to the top
-  window.scrollTo(0, 0);
-}
-
-</script>
-
-
-
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
+
 }
 
 </script>
+
 
 </body>
 </html>
