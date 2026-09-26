@@ -376,20 +376,33 @@ footer {
   Made with love ❤️
 </footer>
 
-
-<script>
+  <script>
 
 function showPage(pageId) {
 
+  // Hide the opening screen
+  document.getElementById("home").style.display = "none";
+
+  // Hide every section
   document.querySelectorAll(".section").forEach(section => {
     section.classList.remove("active");
   });
 
-  document.getElementById(pageId).classList.add("active");
+  // Show the selected page
+  const page = document.getElementById(pageId);
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  if (page) {
+    page.classList.add("active");
+  }
+
+  // Go back to the top
+  window.scrollTo(0, 0);
+}
+
+</script>
+
+
+
   });
 }
 
