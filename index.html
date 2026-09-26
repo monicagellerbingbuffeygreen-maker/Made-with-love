@@ -1,3 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Made With Love ❤️</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,190,205,.35), transparent 25%),
+    radial-gradient(circle at 90% 30%, rgba(255,220,180,.3), transparent 25%),
+    #f8eee7;
+  color: #463737;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ---------- GENERAL SCREENS ---------- */
+
+.screen {
+  display: none;
+  min-height: 100vh;
+}
+
+.screen.active {
+  display: block;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 55px 20px 80px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  min-height: 100vh;
+  padding: 40px 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at 15% 20%, #ffd9e3 0 4px, transparent 5px),
+    radial-gradient(circle at 80% 25%, #e8c9c0 0 3px, transparent 4px),
+    radial-gradient(circle at 30% 80%, #f2c9b9 0 3px, transparent 4px),
+    linear-gradient(135deg, #fff4f6, #f8eadf);
+}
+
+.hero.active {
+  display: flex;
+}
+
+.hero::before {
+  content: "♡  ✦  ♡  ✧  ♡";
+  font-size: 20px;
+  letter-spacing: 10px;
+  color: #bd7182;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 10vw, 70px);
+  margin: 0;
+  color: #633f46;
+  letter-spacing: -2px;
+}
+
+.hero h1::after {
+  content: "made especially for you";
+  display: block;
+  font-family: "Brush Script MT", cursive;
+  font-size: 23px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #a66c78;
+  margin-top: 8px;
+}
+
+.hero p {
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 25px auto;
+}
+
+.enter {
+  margin-top: 15px;
+  padding: 15px 32px;
+  border: 2px solid #633f46;
+  border-radius: 8px;
+  background: #fffaf5;
+  color: #633f46;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #d99aaa;
+  transition: .2s;
+}
+
+.enter:hover {
+  transform: translate(3px,3px);
+  box-shadow: 2px 2px 0 #d99aaa;
+}
+
+/* ---------- PAGE HEADERS ---------- */
+
+.page-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.page-title h1 {
+  font-size: clamp(34px, 8vw, 52px);
+  color: #633f46;
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  font-style: italic;
+  color: #80686a;
+}
+
+/* ---------- BACK BUTTON ---------- */
+
+.back {
+  border: none;
+  background: transparent;
+  color: #754d58;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* ---------- JARS ---------- */
+
+.jar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.jar {
+  position: relative;
+  padding: 38px 25px;
+  background: #fffaf5;
+  border: 1px solid #e8d6cd;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow:
+    5px 7px 0 #ead0d0,
+    0 10px 25px rgba(80,50,50,.10);
+
+  transition: .25s;
+}
+
+.jar:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.jar:nth-child(2) {
+  transform: rotate(1.5deg);
+}
+
+.jar:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.jar:hover {
+  transform: rotate(0) translateY(-7px);
+}
+
+.jar .emoji {
+  font-size: 55px;
+}
+
+.jar h2 {
+  margin: 15px 0 8px;
+  color: #633f46;
+}
+
+.jar p {
+  color: #806c6c;
+  line-height: 1.6;
+}
+
+/* little tape */
+
+.jar::before {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 18px;
+  background: rgba(232,190,194,.65);
+  top: -9px;
+  left: calc(50% - 32px);
+  transform: rotate(-4deg);
+}
+
+/* ---------- PAPER NOTE ---------- */
+
+.note {
+  position: relative;
+  background:
+    linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)),
+    #fffaf3;
+
+  border: 1px solid #eadbd2;
+  padding: 30px;
+  margin: 30px 0;
+
+  box-shadow:
+    4px 6px 0 #e8d4d0,
+    0 12px 25px rgba(70,50,50,.08);
+}
+
+.note:nth-child(even) {
+  transform: rotate(.5deg);
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 20px;
+  background: rgba(236,194,190,.65);
+  top: -10px;
+  left: 35px;
+  transform: rotate(-3deg);
+}
+.note p {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.note h2 {
+  color: #754d58;
+}
+
+/* ---------- MEMORY PHOTOS ---------- */
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 35px 0;
+}
+
+.polaroid {
+  position: relative;
+  background: white;
+  padding: 10px 10px 35px;
+  box-shadow: 0 7px 18px rgba(60,40,40,.16);
+  transition: .25s;
+}
+
+.polaroid:nth-child(odd) {
+  transform: rotate(-2.5deg);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2.5deg);
+}
+
+.polaroid:hover {
+  transform: rotate(0) scale(1.02);
+}
+
+.polaroid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-family: "Brush Script MT", cursive;
+  color: #76565a;
+  font-size: 18px;
+}
+
+/* ---------- PHOTO TAPE ---------- */
+
+.polaroid::before {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 17px;
+  background: rgba(237,201,193,.7);
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+/* ---------- SECTION LABEL ---------- */
+
+.sticker {
+  display: inline-block;
+  padding: 7px 13px;
+  background: #eeb7c1;
+  color: white;
+  border-radius: 3px;
+  font-size: 13px;
+  transform: rotate(-3deg);
+  margin-bottom: 12px;
+}
+
+/* ---------- PAGE BUTTON ---------- */
+
+.page-button {
+  display: block;
+  margin: 35px auto;
+  padding: 13px 23px;
+  border: 1px solid #8e626a;
+  background: #fff9f4;
+  color: #704a53;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 #e2bfc3;
+  font-size: 15px;
+}
+
+.page-button:hover {
+  transform: translateY(2px);
+}
+
+/* ---------- AUDIO ---------- */
+
+audio {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ---------- VIDEO ---------- */
+
+video {
+  width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  margin-top: 15px;
+  background: #eadfd9;
+  border: 8px solid white;
+  box-shadow: 0 7px 20px rgba(50,40,40,.15);
+}
+
+/* ---------- BIRTHDAY ---------- */
+
+.birthday-card {
+  text-align: center;
+  background: #fff9f3;
+  padding: 45px 28px;
+  border: 1px solid #eadbd2;
+
+  box-shadow:
+    6px 7px 0 #e5c5c8,
+    0 15px 30px rgba(60,40,40,.1);
+}
+
+.birthday-card h2 {
+  font-family: "Brush Script MT", cursive;
+  font-size: 42px;
+  color: #a55f70;
+}
+
+.birthday-card p {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+/* ---------- LITTLE DOODLES ---------- */
+
+.doodle {
+  text-align: center;
+  color: #bb7887;
+  font-size: 23px;
+  letter-spacing: 12px;
+  margin: 25px 0;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #907579;
+  font-family: "Brush Script MT", cursive;
+  font-size: 20px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 35px 16px 60px;
+  }
+
+  .note {
+    padding: 23px 18px;
+  }
+
+  .note p {
+    font-size: 16px;
+  }
+
+  .memory-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .polaroid img {
+    height: 300px;
+  }
+
+  .jar-grid {
+    gap: 25px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="screen hero active" id="home">
+
+  <h1>Made With Love ❤️</h1>
+
+  <p>
+    A little something from your little sister —
+    made from memories, home, and a lot of love.
+  </p>
+
+  <button class="enter" onclick="showPage('jars')">
+    Open it 💌
+  </button>
+
+</section>
+
+
+<!-- ================= JARS ================= -->
+
+<section class="screen container" id="jars">
+
+  <div class="page-title">
+
+    <div class="doodle">♡ ✦ ♡</div>
+
+    <h1>For you ❤️</h1>
+
+    <p>
+      Three little places for three different kinds of memories.
+    </p>
+
+  </div>
+
+
+  <div class="jar-grid">
+
+    <div class="jar" onclick="showPage('memories')">
+
+      <div class="emoji">🩷</div>
+
+      <h2>Our Memories</h2>
+
+      <p>
+        A few things I still remember.
+      </p>
+
+    </div>
+
+
+    <div class="jar" onclick="showPage('homeSection')">
+
+      <div class="emoji">🏠</div>
+
+      <h2>A Little Piece of Home</h2>
+
+      <p>
+        For the days you miss home.
+      </p>
+
+    </div>
+<div class="jar" onclick="showPage('birthday')">
+
+      <div class="emoji">🎂</div>
+
+      <h2>Made With Love</h2>
+
+      <p>
+        Because it's your birthday.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="doodle">
+    ✧ ♡ ✧ ♡ ✧
+  </div>
+
+</section>
+
+
+<!-- ================= MEMORIES PAGE 1 ================= -->
+
+<section class="screen container" id="memories">
+
+  <button class="back" onclick="showPage('jars')">
+    ← Back
+  </button>
+
+  <div class="page-title">
+
+    <span class="sticker">from the archives</span>
+
+    <h1>🩷 Our Memories</h1>
+
+    <p>
+      A few things I still remember.
+    </p>
+
+  </div>
+
+
+  <div class="note">
+
+    <p>
+      Hey BRO✨
+    </p>
+
+    <p>
+      If you're opening this, I’m assuming you miss me
+      (which is reasonable 😁). And honestly… I miss you too🥹
+    </p>
+
+    <p>
+      I miss all those random times when we were together,
+      laughing, annoying each other, doing stupid things and
+      just existing 🧘. I hope we never become those siblings
+      who barely talk or slowly become strangers just because
+      life gets busy🙏. Even when we fight, I hope we always
+      figure it out and come back to each other 🫶🫶
+    </p>
+
+    <p>
+      There’s a huge distance between us rn — you're in the US
+      and I’m here in India — but I really hope that never
+      changes how close we are😶‍🌫️. I hope no matter what
+      happens in our lives, we always find our way back to each
+      other 🤧
+    </p>
+
+    <p>
+      I still remember little things from when I was younger
+      that you probably don't even remember
+      (I hope you do tho) 😅
+    </p>
+
+    <p>
+      Like the first time I ever ate dahi puri. It was with you.
+      I know it sounds so random and small, but somehow I still
+      remember it. I literally had dahi puri the other day and
+      immediately thought of you 😭. And that tiny memory was
+      one of the reasons I thought of making this whole thing
+    </p>
+
+    <p>
+      And you stealing chicken from my plate 😭. I didn't even
+      notice it back then until you told me. I still don't
+      remember half of it 😭 which is really funny
+    </p>
+
+    <p>
+      When I was little, I didn't really understand how much
+      time I was spending with you. Then you went away for
+      hostel, college and everything, and suddenly we weren't
+      around each other as much. Now that I think about it,
+      that's probably why lockdown feels so special to me.
+      We actually got to spend so much time together again.
+    </p>
+
+    <p>
+      We watched so many movies and documentaries together.
+      I still remember the Titanic documentary we watched,
+      and us waiting for new episodes of Loki every Wednesday🔥.
+      We used to go to theatres and honestly, I think a lot of
+      my love for movies came from you(maybe not really sure)🤷
+    </p>
+
+    <p>
+      And somehow you used to make me do your work too🙄.
+      After lockdown, when school started again, you literally
+      wrote my notes because I had watched approximately ZERO
+      lectures during lockdown💀. And then when I was in 8th/9th,
+      you made me write some of you assignments too(2 actually
+      i wanted to exaggerate).
+    </p>
+
+  </div>
+
+
+  <div class="memory-grid">
+
+    <div class="polaroid">
+      <img src="images/memories/photo1.jpg" alt="Memory">
+      <span>us ♡</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/memories/photo2.jpg" alt="Memory">
+      <span>somewhere in the archives</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/memories/photo3.jpg" alt="Memory">
+      <span>tiny memories</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/memories/photo4.jpg" alt="Memory">
+      <span>remember this?</span>
+    </div>
+
+  </div>
+
+
+  <div class="doodle">
+    ♡ ✦ ♡ ✦ ♡
+  </div>
+
+
+  <button class="page-button" onclick="showPage('memories2')">
+    More Memories → 📖
+  </button>
+
+</section>
+
+
+<!-- ================= MEMORIES PAGE 2 ================= -->
+
+<section class="screen container" id="memories2">
+<button class="back" onclick="showPage('memories')">
+    ← Previous Page
+  </button>
+
+  <div class="page-title">
+
+    <span class="sticker">page two</span>
+
+    <h1>🩷 More Memories</h1>
+
+  </div>
+
+
+  <div class="note">
+
+    <p>
+      And then there was the Disney+ Hotstar situation 😭.
+      You gave me a fixed amount of screen time and even locked
+      the cartoon channel. But you made one tiny mistake😁,
+      you used the same password for my phone and the TV thing😝.
+      Obviously I figured it out. I still remember how shocked
+      you were.
+    </p>
+
+    <p>
+      And Cream Stone🤧. You'd always get Willy Wonka, and
+      you'd make me try different flavours while you stayed
+      safely with your comfort order. Looking back, I realise
+      I was being a lab rat for you while you enjoyed the
+      results🙄😑.(I enjoyed the results too tho😄😃)
+    </p>
+
+    <p>
+      Then there was Yomi 🥹. I don't remember every detail
+      anymore, but I remember playing with Yomi and you being
+      there. I remember running around, racing with him and
+      somehow ending up scraping my knee. Some memories are
+      blurry now, but they're still there somewhere.And I still
+      remember that random moments when we used to make those
+      stupid trend videos, including that one where you used
+      the reverse effect with the glass of water so it looked
+      like the water jumped back into the glass, And that
+      "aasa dosa apadam vada" trend💀
+    </p>
+
+    <p>
+      There are so many tiny things like that. You introducing
+      me to foods and places, like Mehfill biryani (which is
+      under a controversy), RTC Cross Roads biryani, bbq nation
+      and all that stuff. You teaching me random things.
+      You including me when I was too young to actually know
+      what I was doing. You being around for things that
+      probably felt completely normal to you but somehow became
+      memories for me.
+    </p>
+
+    <p>
+      Now you're literally in another country learning how to
+      cook and figure out life which is great😅😭. And I'm
+      actually proud of you for that. But when you come back
+      to India, I'm expecting you to cook for me some really
+      nice dishes👌👌
+    </p>
+
+    <p>
+      And we're definitely going somewhere too. Wonderla,
+      Ramoji, some random trip, literally anywhere. We'll go
+      out, eat everything, TAKE PICTURE (we basically have none
+      if we ignore the funny ones) and have an absolute blast
+      🙉🙉.
+    </p>
+
+    <p>
+      I know we don't always talk about everything, and we're
+      not exactly the siblings who sit down and discuss every
+      detail of our lives 😅. But I hope that changes too.
+      I hope as we get older, we don't just become two people
+      who happen to be siblings. I want us to actually know
+      each other.
+    </p>
+
+    <p>
+      And no matter how much life changes, I hope you always
+      know that you have me. Whether we're in the same house,
+      different cities or literally on opposite sides of the
+      world.
+    </p>
+
+    <p>
+      So yeah… that's a lot of words, I was NOT EXPECTING to
+      do this much yup and somehow reached here
+    </p>
+
+    <p>
+      I love you 🫶
+      <br>
+      Byeeeee 🫶🫶👋
+    </p>
+
+  </div>
+
+
+  <div class="memory-grid">
+
+    <div class="polaroid">
+      <img src="images/memories/photo5.jpg" alt="Memory">
+      <span>the archives ♡</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/memories/photo6.jpg" alt="Memory">
+      <span>chaos</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/memories/photo7.jpg" alt="Memory">
+      <span>one of those days</span>
+    </div>
+
+    <div class="polaroid">
+      <img src="images/memories/photo8.jpg" alt="Memory">
+      <span>♡</span>
+    </div>
+
+  </div>
+
+
+  <div class="doodle">
+    ✧ ♡ ✧ ♡ ✧
+  </div>
+
+</section>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="screen container" id="homeSection">
+
+  <button class="back" onclick="showPage('jars')">
+    ← Back
+  </button>
+
+  <div class="page-title">
 <span class="sticker">a little piece of home</span>
 
     <h1>🏠 A Little Piece of Home</h1>
